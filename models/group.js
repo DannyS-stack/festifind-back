@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   group.init(
     {
-      name: DataTypes.INTEGER,
+      name: DataTypes.STRING,
       ownerId: DataTypes.INTEGER,
       image: DataTypes.STRING,
     },
