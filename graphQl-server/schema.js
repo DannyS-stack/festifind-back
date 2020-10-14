@@ -24,6 +24,17 @@ const typeDefs = gql`
     oneUser(id: Int!): User
     oneGroup(id: Int!): Group
   }
+
+  type Mutation {
+    SignUp(
+      username: String!
+      email: String!
+      password: String!
+      image: String
+      name: String!
+      phone: Int!
+    ): User!
+  }
 `;
 
 module.exports = { typeDefs };
