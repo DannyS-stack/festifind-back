@@ -1,6 +1,8 @@
 require(`dotenv`).config();
+const cors = require("cors");
 const express = require("express");
-const { ApolloServer } = require("apollo-server-express");
+const { ApolloServer, graphiqlExpress } = require("apollo-server-express");
+const all = require("apollo-server-express");
 const { typeDefs } = require("./graphQl-server/schema");
 const resolvers = require("./graphQl-server/resolvers");
 const db = require("./models");
@@ -8,7 +10,15 @@ const db = require("./models");
 const PORT = 4000;
 
 const app = express();
+app.use(cors());
 
+// app.use(`/graphiql`, graphiqlExpress({ endpointURL: `/graphql` }));
+console.log(
+  "apolloserver grapiql",
+  all.ApolloServer,
+  ApolloServer.graphiqlExpress
+);
+console.log(`graphiql:`, graphiqlExpress);
 const server = new ApolloServer({
   typeDefs,
   resolvers,

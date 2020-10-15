@@ -15,7 +15,7 @@ const typeDefs = gql`
     password: String!
     image: String
     name: String!
-    phone: Int!
+    phone: String!
   }
 
   type Query {
@@ -32,7 +32,7 @@ const typeDefs = gql`
       password: String!
       image: String
       name: String!
-      phone: Int!
+      phone: String!
     ): User!
   }
 `;
