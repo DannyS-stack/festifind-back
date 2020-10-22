@@ -28,22 +28,6 @@ const server = new ApolloServer({
 });
 server.applyMiddleware({ app });
 
-// app.patch("http://localhost:4000/update", async (req, res, next) => {
-//   try {
-//     const { id, latitude, longitude } = req.body;
-//     const user = await User.findByPk(id);
-//     console.log(longitude);
-//     console.log(latitude);
-//     const updatedUser = await user.update({
-//       longitude,
-//       latitude,
-//     });
-//     res.send("IM HERE");
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// });
-
 app.listen({ port: PORT }, () =>
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 );

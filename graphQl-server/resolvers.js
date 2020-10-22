@@ -142,7 +142,7 @@ module.exports = {
       return newGroup;
     },
     createParticipant: async (parent, { email, groupId }, { db }, info) => {
-      const user = await db.findOne({ where: { email } });
+      const user = await db.user.findOne({ where: { email } });
 
       const newParticipant = await db.participant.create({
         userId: user.id,
