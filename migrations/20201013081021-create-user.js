@@ -42,6 +42,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      longitude: {
+        type: Sequelize.FLOAT,
+      },
+      latitude: {
+        type: Sequelize.FLOAT,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
